@@ -1,4 +1,3 @@
-import { DarkThemeToggle } from "flowbite-react";
 import "../src/styles/global.css";
 import Routes from "./routes";
 
