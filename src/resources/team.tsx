@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const team: React.FC = () => {
+const Team = () => {
   return (
-    <div>: React.FC</div>
-  )
-}
+    <div>Team</div>
+  );
+};
 
-export default team;
+export default Team;

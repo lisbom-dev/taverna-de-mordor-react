@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const starRating = () => {
+const StarRating = () => {
   return (
     <div>starRating</div>
-  )
-}
+  );
+};
 
-export default starRating
+export default StarRating;

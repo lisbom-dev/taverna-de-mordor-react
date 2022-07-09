@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const alert = () => {
+const Alert = () => {
   return (
     <div>alert</div>
-  )
-}
+  );
+};
 
-export default alert
+export default Alert;

@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const reviewForm = () => {
+const ReviewForm = () => {
   return (
     <div>reviewForm</div>
-  )
-}
+  );
+};
 
-export default reviewForm
+export default ReviewForm;

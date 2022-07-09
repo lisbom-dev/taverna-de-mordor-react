@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const hexagonalPhoto = () => {
+const HexagonalPhoto = () => {
   return (
     <div>hexagonalPhoto</div>
-  )
-}
+  );
+};
 
-export default hexagonalPhoto
+export default HexagonalPhoto;

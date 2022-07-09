@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const starValue = () => {
+const StarValue = () => {
   return (
     <div>starValue</div>
-  )
-}
+  );
+};
 
-export default starValue
+export default StarValue;

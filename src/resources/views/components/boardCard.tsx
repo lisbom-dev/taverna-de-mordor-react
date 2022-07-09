@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const boardCard = () => {
+const BoardCard = () => {
   return (
     <div>boardCard</div>
-  )
-}
+  );
+};
 
-export default boardCard
+export default BoardCard;

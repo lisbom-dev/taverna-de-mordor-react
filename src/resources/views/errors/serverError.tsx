@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const serverError = () => {
+const ServerError = () => {
   return (
     <div>serverError</div>
-  )
-}
+  );
+};
 
-export default serverError
+export default ServerError;

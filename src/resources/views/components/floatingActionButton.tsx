@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const floatingActionButton = () => {
+const FloatingActionButton = () => {
   return (
-    <div>floatingActionButton</div>
-  )
-}
+    <div>loatingActionButton</div>
+  );
+};
 
-export default floatingActionButton
+export default FloatingActionButton;
