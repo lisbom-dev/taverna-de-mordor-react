@@ -1,6 +1,6 @@
 import React from 'react'
 
-const chat = () => {
+const Chat = () => {
   return (
    @layout('layouts/main')
 
@@ -167,5 +167,5 @@ const chat = () => {
    )
    }
 
-export default chat;
+export default Chat;
 

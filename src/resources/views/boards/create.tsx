@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-const create = () => {
+const Create = () => {
   return (
     @layout('layouts/main')
 
@@ -57,8 +57,8 @@ const create = () => {
           </form>
 
     @endsection
-  )
-}
+  );
+};
 
-export default create;
+export default Create;
 
