@@ -2,30 +2,31 @@ import React, { useEffect, useState } from "react";
 import api from "../../../api";
 import IPage from "../../../shared/interfaces/IPage";
 import IUserCardProps from "../../../shared/interfaces/IUserCardProps";
+import Main from "../layouts/Main";
 import UsersCard from "./components/UsersCard";
 
 const list: React.FC = () => {
-  const [ users, setUsers ] = useState<IUserCardProps[]>([])
-  const [ page, setPage ] = useState<IPage>({} as IPage)
-  
+  const [users, setUsers] = useState<IUserCardProps[]>([]);
+  const [page, setPage] = useState<IPage>({} as IPage);
+
   const handleListUsers = async () => {
-    try{
+    try {
       const { data } = await api.get("/users");
       console.log(data.data, "Pinto");
-      console.log(data.meta, "Meta ok")
+      console.log(data.meta, "Meta ok");
       setUsers(data.data);
       setPage(data.meta);
-    } catch (err){
+    } catch (err) {
       console.log(err, "Bunda!");
     }
-  }
+  };
 
   useEffect(() => {
-    handleListUsers()
-  }, [])
+    handleListUsers();
+  }, []);
 
   return (
-    <div>
+    <Main>
       <div className="p-3 my-3">
         <div className="bg-white p-8 rounded-md w-full">
           <div className=" flex items-center justify-between pb-6">
@@ -65,27 +66,28 @@ const list: React.FC = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {users.length>0 && users.map((user) => {
-                      return (
-                        <UsersCard
-                          id={user.id}
-                          name={user.name}
-                          email={user.email}
-                          cell_phone_number={user.cell_phone_number}
-                          instagram_ref={user.instagram_ref}
-                          is_adm={user.is_adm}
-                          is_master={user.is_master}
-                          photo_url={user.photo_url}
-                          key={user.id}
-                          username={user.username}
-                          description={user.description}
-                          created_at={user.created_at}
-                          updated_at={user.updated_at}
-                          avaluation={user.avaluation}
-                          reviews={user.reviews}
-                        />
-                      );
-                    })}
+                    {users.length > 0 &&
+                      users.map((user) => {
+                        return (
+                          <UsersCard
+                            id={user.id}
+                            name={user.name}
+                            email={user.email}
+                            cell_phone_number={user.cell_phone_number}
+                            instagram_ref={user.instagram_ref}
+                            is_adm={user.is_adm}
+                            is_master={user.is_master}
+                            photo_url={user.photo_url}
+                            key={user.id}
+                            username={user.username}
+                            description={user.description}
+                            //created_at={user.created_at}
+                            //updated_at={user.updated_at}
+                            avaluation={user.avaluation}
+                            reviews={user.reviews}
+                          />
+                        );
+                      })}
                   </tbody>
                 </table>
               </div>
@@ -98,29 +100,27 @@ const list: React.FC = () => {
           <ul className="flex pl-0 list-none rounded my-2"></ul>
         </div>
       </div>
-      
-    </div>
-
+      <li>
+        <a className="page-link w-full h-full">
+          <button className="relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-blue-700 border-r-0 ml-0 rounded-l hover:bg-gray-200">
+            Anterior
+          </button>
+        </a>
+      </li>
+      <li>
+        <a className="page-link w-full h-full" href="">
+          <button className="relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-blue-700 border-r-0 hover:bg-gray-200"></button>
+        </a>
+      </li>
+      <li>
+        <a className="page-link w-full h-full" href="">
+          <button className="relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-blue-700 rounded-r hover:bg-gray-200">
+            Próximo
+          </button>
+        </a>
+      </li>
+    </Main>
   );
 };
-/**
-    {parseInt(`${page.current_page}`) > page.first_page &&(      
-      <li><a className="page-link w-full h-full" href={`/users${page.previous_page_url()}`}><button className="relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-blue-700 border-r-0 ml-0 rounded-l hover:bg-gray-200">Anterior</button></a></li>
-      : 
-      <li><a className="page-link w-full h-full" href="/users{{users.getPreviousPageUrl()}}"><button disabled className="relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-blue-700 border-r-0 ml-0 rounded-l opacity-50 cursor-not-allowed">Anterior</button></a></li>                    
-      )}
-      @each(anchor in users.getUrlsForRange(1,users.lastPage))     
-      <li><a className="page-link w-full h-full" href="/users{{anchor.url}}">
-        @if(parseInt(page) == parseInt(anchor.page))
-        <button className="relative block py-2 px-3 leading-tight bg-blue-500 border border-gray-300 text-white border-r-0">{{anchor.page}}</button></a></li>
-        else
-        <button className="relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-blue-700 border-r-0 hover:bg-gray-200">{{anchor.page}}</button></a></li>
-        endif
-      endeach
-      @if(parseInt(page)< users.lastPage)  
-      <li><a className="page-link w-full h-full" href="/users{{users.getNextPageUrl()}}"><button className="relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-blue-700 rounded-r hover:bg-gray-200">Próximo</button></a></li>
-      else
-      <li><a className="page-link w-full h-full" href="/users{{users.getNextPageUrl()}}"><button disabled className="relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-blue-700 rounded-r opacity-50 cursor-not-allowed">Próximo</button></a></li>      
-      }
-    */
+
 export default list;

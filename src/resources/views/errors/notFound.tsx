@@ -1,8 +1,10 @@
-import React from 'react';
+import React from "react";
 
-const NotFound = () => {
+const NotFound: React.FC = () => {
   return (
-    <div>notFound</div>
+    <div>
+      <p> It's a 404 </p>
+    </div>
   );
 };
 

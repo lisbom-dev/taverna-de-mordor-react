@@ -1,8 +1,10 @@
-import React from 'react';
+import React from "react";
 
-const Unauthorized = () => {
+const Unauthorized: React.FC = () => {
   return (
-    <div>unauthorized</div>
+    <div>
+      <p> It's a 403 </p>
+    </div>
   );
 };
 

@@ -1,8 +1,23 @@
-import React from 'react';
+import React from "react";
+import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
-const StarValue = () => {
+const StarValue: React.FC = () => {
   return (
-    <div>starValue</div>
+    <div className="flex flex-row">
+      <template>
+        <div>
+          <template>
+            <FaStarHalfAlt className="text-yellow-400" />
+          </template>
+          <template>
+            <FaStar className="text-yellow-400" />
+          </template>
+          <template>
+            <FaStar className="text-yellow-400" />
+          </template>
+        </div>
+      </template>
+    </div>
   );
 };
 

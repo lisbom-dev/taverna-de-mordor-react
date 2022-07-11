@@ -1,8 +1,10 @@
-import React from 'react';
+import React from "react";
 
-const ServerError = () => {
+const ServerError: React.FC = () => {
   return (
-    <div>serverError</div>
+    <div>
+      <p> It's a 500 </p>
+    </div>
   );
 };
 
