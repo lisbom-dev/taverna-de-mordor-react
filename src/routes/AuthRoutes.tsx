@@ -1,6 +1,6 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import SignIn from "../resources/SignIn";
+import SignIn from "../resources/views/SignIn";
 import List from "../resources/views/users/List";
 import SignUp from "../resources/views/users/SignUp";
 
@@ -9,8 +9,8 @@ const AuthRoutes: React.FC = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/sign-in" />} />
-      <Route path="/home" element={<List />} />
+      <Route path="/" element={<Navigate to="/home" />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/sign-in" element={<SignIn />} />
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="/logout" element={<></>}/>
