@@ -7,6 +7,11 @@ import {
   useEffect,
 } from "react";
 import MySwal from "../services/swal";
+import {
+  AuthContextData,
+  AuthProviderProps,
+} from "../shared/interfaces/AuthContext";
+import IUser from "../shared/interfaces/IUser";
 
 export const AuthContext = createContext<AuthContextData>(
   {} as AuthContextData
