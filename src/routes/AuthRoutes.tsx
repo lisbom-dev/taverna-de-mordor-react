@@ -3,7 +3,7 @@ import { useAuth } from "../contexts/AuthContext";
 import Home from "../resources/views/Home";
 import SignIn from "../resources/views/SignIn";
 import Team from "../resources/views/Team";
-import List from "../resources/views/users/List";
+import UsersList from "../resources/views/users/UsersList";
 import SignUp from "../resources/views/users/SignUp";
 
 const AuthRoutes: React.FC = () => {
@@ -17,7 +17,7 @@ const AuthRoutes: React.FC = () => {
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="/logout" element={<></>} />
       <Route path="/equipe" element={<Team />} />
-      <Route path="/users" element={<List />} />
+      <Route path="/users" element={<UsersList />} />
       <Route path="/users/:id" element={<></>} />
       <Route path="/adms/:id" element={<></>} />
       <Route path="/masters/:id" element={<></>} />
