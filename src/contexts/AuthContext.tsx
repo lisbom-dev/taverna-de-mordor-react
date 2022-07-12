@@ -104,6 +104,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   }, []);
 
+    const url = new URL(process.env.VITE_DEV_GOOGLE_REDIRECT!);
   return (
     <AuthContext.Provider value={{ signed, login, register, logout, user }}>
       {children}
