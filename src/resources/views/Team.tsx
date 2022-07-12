@@ -2,6 +2,39 @@ import React from "react";
 import Main from "./layouts/Main";
 
 const Team: React.FC = () => {
+  const team = [
+    {
+      name: "Manuel Antunes",
+      img: "https://avatars.githubusercontent.com/u/57446204?v=4",
+      link: "https://github.com/Manuel-Antunes",
+      role: "Líder",
+    },
+    {
+      name: "Guilherme de Jesus",
+      img: "https://avatars.githubusercontent.com/u/83377948?v=4",
+      link: "https://github.com/guilherme-gjv",
+      role: "Front-end",
+    },
+    {
+      name: "Eduardo Queiroz",
+      img: "https://avatars.githubusercontent.com/u/83377894?v=4",
+      link: "https://github.com/duardoqueiroz",
+      role: "Back-end",
+    },
+    {
+      name: "Victor Lucas",
+      img: "https://avatars.githubusercontent.com/u/88686013?v=4",
+      link: "https://github.com/victorlucasrobs",
+      role: "Back-end",
+    },
+    {
+      name: "Wendel Ernandes",
+      img: "https://avatars.githubusercontent.com/u/81384399?v=4",
+      link: "https://github.com/Wendel-Ernandes",
+      role: "Front-end",
+    },
+  ];
+
   return (
     <Main>
       <div>
@@ -25,19 +58,24 @@ const Team: React.FC = () => {
           </h3>
         </div>
         <ul className="bg-gray-50 justify-center text-center grid grid-cols-3 place-items-center">
-          <li className="m-6">
-            <a href="" target="_blank">
-              <img
-                className=" rounded-full md:w-36 lg:w-48 lg:h-48 shadow-lg hover:opacity-90"
-                src=""
-                alt=""
-              />
-            </a>
-            <span className="font-medium text-md lg:text-2xl mt ">
-              <br />
-            </span>
-            <p className="text-sm lg:text-lg"></p>
-          </li>
+          {team.map((teamMate) => {
+            return (
+              <li className="m-6">
+                <a href={teamMate.link} target="_blank">
+                  <img
+                    className=" rounded-full md:w-36 lg:w-48 lg:h-48 shadow-lg hover:opacity-90"
+                    src={teamMate.img}
+                    alt={teamMate.name}
+                  />
+                </a>
+                <span className="font-medium text-md lg:text-2xl mt ">
+                  <br />
+                  {teamMate.name}
+                </span>
+                <p className="text-sm lg:text-lg"></p>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </Main>
