@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import api from "../../../api";
+import api from "../../../services/api";
 import IPage from "../../../shared/interfaces/IPage";
-import IUserCardProps from "../../../shared/interfaces/IUserCardProps";
+import IUser from "../../../shared/interfaces/IUser";
 import Main from "../layouts/Main";
 import UsersCard from "./components/UsersCard";
 
 const list: React.FC = () => {
-  const [users, setUsers] = useState<IUserCardProps[]>([]);
+  const [users, setUsers] = useState<IUser[]>([]);
   const [page, setPage] = useState<IPage>({} as IPage);
 
   const handleListUsers = async () => {
@@ -81,8 +81,8 @@ const list: React.FC = () => {
                             key={user.id}
                             username={user.username}
                             description={user.description}
-                            //created_at={user.created_at}
-                            //updated_at={user.updated_at}
+                            created_at={user.created_at}
+                            updated_at={user.updated_at}
                             avaluation={user.avaluation}
                             reviews={user.reviews}
                           />

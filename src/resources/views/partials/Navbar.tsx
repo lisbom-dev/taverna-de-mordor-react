@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Navbar: React.FC = () => {
+  const [toogleNotifications, setToogleNotifications] =
+    useState<boolean>(false);
+
+  const handleToogleNotifications = () => {
+    setToogleNotifications(!toogleNotifications);
+  };
+
   return (
     <div>
       <nav className="bg-gray-900 z-10">
@@ -85,6 +92,7 @@ const Navbar: React.FC = () => {
               <div className="relative">
                 <button
                   type="button"
+                  onClick={handleToogleNotifications}
                   className="bg-gray-900 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 relative focus:ring-offset-gray-800 focus:ring-white"
                 >
                   <span className="sr-only">View notifications</span>
