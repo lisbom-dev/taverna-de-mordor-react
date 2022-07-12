@@ -11,6 +11,7 @@ export interface AuthContextData {
     passwordConfirmation: string
   ) => Promise<void>;
   logout: () => Promise<void>;
+  googleOauth: () => Promise<void>;
 }
 
 export interface AuthProviderProps {

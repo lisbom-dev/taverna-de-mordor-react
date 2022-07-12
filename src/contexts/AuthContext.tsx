@@ -25,6 +25,16 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     return !!user;
   }, [user]);
 
+  const handleLogin = useCallback((data: any) => {
+    localStorage.setItem("auth:user", JSON.stringify(data.user));
+    localStorage.setItem("auth:token", data.token.token);
+
+    setUser(data.user);
+    setToken(data.token.token);
+
+    MySwal.fire("Logado", "Seja Bem-vindo(a)", "success");
+  }, []);
+
   const handleRehydrateUserData = () => {
     const user = localStorage.getItem("auth:user");
     const token = localStorage.getItem("auth:token");
@@ -54,11 +64,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         password,
       });
 
-      localStorage.setItem("auth:user", JSON.stringify(data.user));
-      localStorage.setItem("auth:token", data.token.token);
-
-      setUser(data.user);
-      setToken(data.token.token);
+      handleLogin(data);
 
       MySwal.fire("Logado", `Bem-vindo ${email}`, "success");
     } catch (err) {
@@ -104,9 +110,19 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   }, []);
 
+  const googleOauth = useCallback(async () => {
     const url = new URL(process.env.VITE_DEV_GOOGLE_REDIRECT!);
+    url.search = window.location.search;
+
+    const { data } = await api.get(url.toString());
+
+    handleLogin(data);
+  }, []);
+
   return (
-    <AuthContext.Provider value={{ signed, login, register, logout, user }}>
+    <AuthContext.Provider
+      value={{ signed, login, register, logout, user, googleOauth }}
+    >
       {children}
     </AuthContext.Provider>
   );
