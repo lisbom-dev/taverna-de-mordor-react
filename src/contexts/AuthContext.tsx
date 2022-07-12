@@ -6,21 +6,7 @@ import {
   useMemo,
   useEffect,
 } from "react";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
-import api from "../api";
-
-export interface AuthContextData {
-  signed: boolean;
-  login: (email: string, password: string) => Promise<void>;
-  register: (
-    name: string,
-    email: string,
-    password: string,
-    passwordConfirmation: string
-  ) => Promise<void>;
-  logout: () => Promise<void>;
-}
+import MySwal from "../services/swal";
 
 export const AuthContext = createContext<AuthContextData>(
   {} as AuthContextData
