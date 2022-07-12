@@ -7,6 +7,7 @@ import {
   useEffect,
 } from "react";
 import MySwal from "../services/swal";
+import api from "../services/api";
 import {
   AuthContextData,
   AuthProviderProps,
@@ -17,14 +18,8 @@ export const AuthContext = createContext<AuthContextData>(
   {} as AuthContextData
 );
 
-interface AuthProviderProps {
-  children: React.ReactNode;
-}
-
-const MySwal = withReactContent(Swal);
-
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState<IUser>();
   const [token, setToken] = useState<string>();
   const signed = useMemo(() => {
     return !!user;
@@ -61,6 +56,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
       localStorage.setItem("auth:user", JSON.stringify(data.user));
       localStorage.setItem("auth:token", data.token.token);
+
+      setUser(data.user);
+      setToken(data.token.token);
 
       MySwal.fire("Logado", `Bem-vindo ${email}`, "success");
     } catch (err) {
@@ -107,7 +105,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ signed, login, register, logout }}>
+    <AuthContext.Provider value={{ signed, login, register, logout, user }}>
       {children}
     </AuthContext.Provider>
   );
