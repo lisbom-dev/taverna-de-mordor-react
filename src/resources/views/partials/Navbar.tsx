@@ -1,11 +1,17 @@
 import React, { useState } from "react";
+import { useAuth } from "../../../contexts/AuthContext";
 
 const Navbar: React.FC = () => {
+  const { googleOauth, logout, login, user, signed } = useAuth();
   const [toogleNotifications, setToogleNotifications] =
     useState<boolean>(false);
 
   const handleToogleNotifications = () => {
     setToogleNotifications(!toogleNotifications);
+  };
+
+  const handleLogout = async () => {
+    await logout();
   };
 
   return (
@@ -180,7 +186,7 @@ const Navbar: React.FC = () => {
                   aria-labelledby="user-menu-button"
                 >
                   <a
-                    href="/users/{{auth.user.id}}"
+                    href={`/users/${user?.id}`}
                     className="block px-4 py-2 text-sm text-gray-700"
                     role="menuitem"
                     id="user-menu-item-0"
@@ -197,20 +203,24 @@ const Navbar: React.FC = () => {
                     <i className="fas fa-cogs mr-3"></i>
                     Configurações
                   </a>
+                  {signed && user?.is_adm && (
+                    <a
+                      href="/users"
+                      className="block px-4 py-2 text-sm text-gray-700"
+                      role="menuitem"
+                      id="user-menu-item-2"
+                    >
+                      <i className="fas fa-crown mr-4"></i>
+                      Área do Adm
+                    </a>
+                  )}
+
                   <a
-                    href="/users"
+                    href="#"
                     className="block px-4 py-2 text-sm text-gray-700"
                     role="menuitem"
                     id="user-menu-item-2"
-                  >
-                    <i className="fas fa-crown mr-4"></i>
-                    Área do Adm
-                  </a>
-                  <a
-                    href="/logout"
-                    className="block px-4 py-2 text-sm text-gray-700"
-                    role="menuitem"
-                    id="user-menu-item-2"
+                    onClick={handleLogout}
                   >
                     <i className="fas fa-sign-out-alt mr-4"></i>
                     Sair
