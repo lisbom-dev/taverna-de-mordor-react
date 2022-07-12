@@ -1,20 +1,23 @@
 import React from "react";
+import { useAuth } from "../../../contexts/AuthContext";
 import Main from "../layouts/Main";
+import cover_rpg from "../../images/cover-rpg.jpg";
 
 const Index: React.FC = () => {
+  const { user } = useAuth();
   return (
     <Main>
       <div className="relative">
         <img
           className="filter blur-sm contrast-100 w-full object-cover h-48"
-          src="{{asset('assets/images/cover-rpg.jpg')}}"
+          src={cover_rpg}
           alt="Imagem de jogadores de RPG"
         />
         <div className="left-20 bottom-10 absolute flex items-center text-lg font-semibold text-white">
           <img
             className="w-20 h-20 object-cover rounded-full"
-            src="{{user.photoUrl}}"
-            alt="{{user.name}}"
+            src={user?.photo_url}
+            alt={user?.name}
           />
           <span className="ml-10">Name:</span>
         </div>
