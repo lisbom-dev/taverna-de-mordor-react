@@ -119,7 +119,7 @@ const home: React.FC = () => {
                   </a>
                 </div>
                 <div className="row-start-1 h-52 col-start-2 col-span-2 bg-dungeons-and-dragons rounded-md overflow-hidden">
-                  <a href="https://dnd.wizards.com/">
+                  <a href="https://dnd.wizards.com/" target="_blank  ">
                     <div className="w-full h-full flex items-end text-center justify-center font-bold text-white">
                       <span className="text-2xl w-full bg-gradient-to-b from-transparent to-black p-10">
                         Dungeons and Dragons

@@ -19,13 +19,13 @@ const Index: React.FC = () => {
             src={user?.photo_url}
             alt={user?.name}
           />
-          <span className="ml-10">Name:</span>
+          <span className="ml-10">Name: {user?.name}</span>
         </div>
       </div>
       <div className="container mx-auto flex flex-col">
         <div className="flex">
-          <span>Name:</span>
-          <span>Email:</span>
+          <span>Name: {user?.name}</span>
+          <span>E-mail: {user?.email}</span>
         </div>
       </div>
     </Main>
