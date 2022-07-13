@@ -1,10 +1,11 @@
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import AuthGoogle from "../resources/views/AuthGoogle";
 import Home from "../resources/views/Home";
 import SignIn from "../resources/views/SignIn";
 import Team from "../resources/views/Team";
-import UsersList from "../resources/views/users/UsersList";
 import SignUp from "../resources/views/users/SignUp";
+import UsersList from "../resources/views/users/UsersList";
 
 const AuthRoutes: React.FC = () => {
   const { signed } = useAuth();
@@ -28,6 +29,7 @@ const AuthRoutes: React.FC = () => {
       <Route path="/boards/:board_id/chat" element={<></>} />
       <Route path="/notifications" element={<></>} />
       <Route path="/notifications/:id" element={<></>} />
+      <Route path="/auth/google" element={<AuthGoogle />} />
     </Routes>
   );
 };
