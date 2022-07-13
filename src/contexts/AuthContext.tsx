@@ -1,13 +1,14 @@
 import {
-  useContext,
   createContext,
   useCallback,
-  useState,
-  useMemo,
+  useContext,
   useEffect,
+  useMemo,
+  useState,
 } from "react";
-import MySwal from "../services/swal";
 import api from "../services/api";
+import MySwal from "../services/swal";
+import { useFetch } from "../services/swr";
 import {
   AuthContextData,
   AuthProviderProps,
@@ -24,16 +25,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const signed = useMemo(() => {
     return !!user;
   }, [user]);
-
-  const handleLogin = useCallback((data: any) => {
-    localStorage.setItem("auth:user", JSON.stringify(data.user));
-    localStorage.setItem("auth:token", data.token.token);
-
-    setUser(data.user);
-    setToken(data.token.token);
-
-    MySwal.fire("Logado", "Seja Bem-vindo(a)", "success");
-  }, []);
 
   const handleRehydrateUserData = () => {
     const user = localStorage.getItem("auth:user");
@@ -53,24 +44,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   useEffect(() => {
     if (token) {
-      api.defaults.headers.common.Authorization;
+      api.defaults.headers.common.Authorization = `Bearer ${token}`;
     }
   }, [token]);
-
-  const login = useCallback(async (email: string, password: string) => {
-    try {
-      const { data } = await api.post("/login", {
-        email,
-        password,
-      });
-
-      handleLogin(data);
-
-      MySwal.fire("Logado", `Bem-vindo ${email}`, "success");
-    } catch (err) {
-      MySwal.fire("Erro", `Preencha as credenciais corretas!`, "error");
-    }
-  }, []);
 
   const register = useCallback(
     async (
@@ -111,17 +87,32 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   }, []);
 
   const googleOauth = useCallback(async () => {
-    const url = new URL(process.env.VITE_DEV_GOOGLE_REDIRECT!);
+    const url = new URL("http://localhost:3333/google/callback");
     url.search = window.location.search;
+    try {
+      const { data, error, isValidating, mutate } = useFetch(url.toString());
+      // const { data } = await api.get(url.toString());
 
-    const { data } = await api.get(url.toString());
+      // localStorage.setItem("auth:user", JSON.stringify(data.user));
+      // localStorage.setItem("auth:token", data.token.token);
 
-    handleLogin(data);
+      console.log(data);
+      console.log(error);
+      console.log(isValidating);
+      console.log(mutate);
+
+      // setUser(data.user);
+      // setToken(data.token.token);
+
+      MySwal.fire("Logado", "Seja Bem-vindo(a)", "success");
+    } catch (err) {
+      console.log(err);
+    }
   }, []);
 
   return (
     <AuthContext.Provider
-      value={{ signed, login, register, logout, user, googleOauth }}
+      value={{ signed, register, logout, user, googleOauth }}
     >
       {children}
     </AuthContext.Provider>
