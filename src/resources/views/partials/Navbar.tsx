@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useAuth } from "../../../contexts/AuthContext";
 
 const Navbar: React.FC = () => {
-  const { googleOauth, logout, login, user, signed } = useAuth();
+  const { googleOauth, logout, user, signed } = useAuth();
   const [toogleNotifications, setToogleNotifications] =
     useState<boolean>(false);
 
@@ -186,7 +186,7 @@ const Navbar: React.FC = () => {
                   aria-labelledby="user-menu-button"
                 >
                   <a
-                    href={`/users/${user?.id}`}
+                    href={import.meta.env.VITE_DEV_GOOGLE_REDIRECT}
                     className="block px-4 py-2 text-sm text-gray-700"
                     role="menuitem"
                     id="user-menu-item-0"
