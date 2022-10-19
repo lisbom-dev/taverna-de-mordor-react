@@ -1,13 +1,13 @@
 import {
-  useContext,
   createContext,
   useCallback,
-  useState,
-  useMemo,
+  useContext,
   useEffect,
+  useMemo,
+  useState,
 } from "react";
-import MySwal from "../services/swal";
 import api from "../services/api";
+import MySwal from "../services/swal";
 import {
   AuthContextData,
   AuthProviderProps,
@@ -53,7 +53,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   useEffect(() => {
     if (token) {
-      api.defaults.headers.common.Authorization = token;
+      api.defaults.headers.common.Authorization = `Bearer ${token}`;
     }
   }, [token]);
 
@@ -109,7 +109,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   }, []);
 
   const googleOauth = useCallback(async () => {
-    const url = new URL("http://localhost:3333/google/redirect");
+    const url = new URL(import.meta.env.VITE_DEV_GOOGLE_CALLBACK);
     url.search = window.location.search;
 
     const { data } = await api.get(url.toString());
