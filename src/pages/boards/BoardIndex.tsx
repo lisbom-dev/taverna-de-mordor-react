@@ -1,5 +1,5 @@
 import React from "react";
-import Main from "../layouts/Main";
+import Main from "../../layouts/Main";
 
 const BoardIndex: React.FC = () => {
   return (
@@ -207,7 +207,11 @@ const BoardIndex: React.FC = () => {
 
                 <div className="flex">
                   <div x-data="{ dropdownOpen: false }" className="relative">
-                    <button className="relative z-10 block">
+                    <button
+                      title="Editar"
+                      type="button"
+                      className="relative z-10 block"
+                    >
                       <i className="fas fa-ellipsis-v text-white lg:text-2xl"></i>
                     </button>
 

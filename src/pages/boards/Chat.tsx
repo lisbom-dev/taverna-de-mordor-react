@@ -1,5 +1,5 @@
 import React from "react";
-import Main from "../layouts/Main";
+import Main from "../../layouts/Main";
 
 const Chat: React.FC = () => {
   return (
@@ -67,6 +67,7 @@ const Chat: React.FC = () => {
               ></textarea>
               <div className="absolute right-0 items-center inset-y-0 flex">
                 <button
+                  title="Enviar"
                   type="button"
                   className="inline-flex items-center justify-center rounded-full h-12 w-12 transition duration-500 ease-in-out text-white bg-blue-500 hover:bg-blue-400 focus:outline-none"
                 >

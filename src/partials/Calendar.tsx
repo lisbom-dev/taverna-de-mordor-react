@@ -1,5 +1,5 @@
-import { addMonths, daysInWeek } from "date-fns";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { addMonths } from "date-fns";
+import React from "react";
 import Main from "../layouts/Main";
 
 interface valuesCal {
@@ -118,6 +118,7 @@ const Calendar: React.FC = () => {
               </div>
               <div className="border rounded-lg px-1">
                 <button
+                  title="Mês Anterior"
                   type="button"
                   className="leading-none rounded-lg transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-gray-200 p-1 items-center"
                 >
@@ -137,6 +138,7 @@ const Calendar: React.FC = () => {
                 </button>
                 <div className="border-r inline-flex h-6"></div>
                 <button
+                  title="Próximo Mês"
                   type="button"
                   className="leading-none rounded-lg transition ease-in-out duration-100 inline-flex items-center cursor-pointer hover:bg-gray-200 p-1"
                 >

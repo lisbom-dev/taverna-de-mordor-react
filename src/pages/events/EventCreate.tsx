@@ -1,5 +1,5 @@
 import React from "react";
-import Main from "../layouts/Main";
+import Main from "../../layouts/Main";
 
 const EventCreate: React.FC = () => {
   return (
@@ -19,6 +19,7 @@ const EventCreate: React.FC = () => {
             type="datetime-local"
             name="date"
             id=""
+            title="Event date"
           />
           <p>Localização</p>
           <input

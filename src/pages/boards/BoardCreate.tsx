@@ -1,5 +1,5 @@
 import React from "react";
-import Main from "../layouts/Main";
+import Main from "../../layouts/Main";
 
 const BoardCreate: React.FC = () => {
   return (
@@ -21,9 +21,10 @@ const BoardCreate: React.FC = () => {
             Titulo da Mesa
           </label>
           <input
+            title="Table title"
             name="name"
-            className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
             type="text"
+            className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
           />
         </div>
 
@@ -32,6 +33,7 @@ const BoardCreate: React.FC = () => {
             Sistema
           </label>
           <select
+            title="System"
             name="systemId"
             className="block appearance-none w-full bg-gray-200 border-2 border-gray-200 hover:border-gray-500 px-4 py-2 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500 text-gray-700"
           >
@@ -45,6 +47,7 @@ const BoardCreate: React.FC = () => {
             Máximo de Jogadores
           </label>
           <input
+            title="Max players"
             name="maxPlayers"
             className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
             type="number"
@@ -57,19 +60,19 @@ const BoardCreate: React.FC = () => {
             Sessão Atual
           </label>
           <input
+            title="Current session"
+            type="number"
             name="currentSection"
             className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
-            type="number"
           />
         </div>
-
         <div className="mt-8 text-right">
-          <button
-            type="button"
+          <a
+            href="/boards"
             className="bg-white hover:bg-gray-100 text-gray-700 font-semibold py-2 px-4 border border-gray-300 rounded-lg shadow-sm mr-2"
           >
-            <a href="/boards">Cancelar</a>
-          </button>
+            Cancelar
+          </a>
           <button
             type="submit"
             className="bg-gray-800 hover:bg-gray-700 text-white font-semibold py-2 px-4 border border-gray-700 rounded-lg shadow-sm"
