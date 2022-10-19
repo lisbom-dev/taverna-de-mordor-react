@@ -1,11 +1,11 @@
 import React from "react";
-import Main from "../../layouts/Main";
+import MainLayout from "../../layouts/MainLayout";
 import Calendar from "../../partials/Calendar";
 
 const EventList: React.FC = () => (
-  <Main>
+  <MainLayout>
     <Calendar />
-  </Main>
+  </MainLayout>
 );
 
 export default EventList;

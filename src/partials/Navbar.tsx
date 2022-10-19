@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                  href="/home"
                   className="font-text text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Início
