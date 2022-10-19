@@ -5,10 +5,10 @@ const EventIndex: React.FC = () => {
   return (
     <Main>
       <div className="container mx-auto mt-10 rounded-lg px-2 py-10 md:px-6 shadow-2xl w-full ">
-        <h1 className="font-bold text-3xl "></h1>
+        <h1 className="font-bold text-3xl"></h1>
         <div className="md:mx-24 lg:flex">
           <div className="flex m-5 items-center">
-            <div className=" flex">
+            <div className="flex">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 mr-2"

@@ -1,8 +1,8 @@
 import React from "react";
-import { useAuth } from "../../contexts/AuthContext";
-import coverRPG from "../images/cover-rpg.jpg";
-import Main from "./layouts/Main";
 import { FaDiceD20, FaFlag } from "react-icons/fa";
+import coverRPG from "../../assets/images/cover-rpg.jpg";
+import { useAuth } from "../../contexts/AuthContext";
+import Main from "./layouts/Main";
 
 const home: React.FC = () => {
   const { logout } = useAuth();
@@ -66,7 +66,7 @@ const home: React.FC = () => {
               </div>
             </div>
           </article>
-          <section className="bg-white ">
+          <section>
             <div className="container mx-auto mt-5 sm:mt-8">
               <h3 className="text-lg font-bold sm:text-3xl text-center text-gray-800">
                 Conheça o Mundo do RPG
@@ -76,7 +76,9 @@ const home: React.FC = () => {
                 <div className="bg-vampire-the-mascarade bg-center rounded-md overflow-hidden">
                   <a
                     href="https://www.worldofdarkness.com/vampire-the-masquerade"
+                    rel="noopener"
                     target="_blank"
+                    title="Vampire the Mascarade"
                   >
                     <div className="w-full h-full flex items-end text-center justify-center font-bold text-white">
                       <span className="text-2xl bg-gradient-to-b w-full from-transparent to-black p-10">
@@ -89,6 +91,7 @@ const home: React.FC = () => {
                   <a
                     href="https://www.instagram.com/alrpgcluboficial/"
                     target="_blank"
+                    rel="noopener"
                   >
                     <div className="w-full h-full flex items-end text-center justify-center font-bold text-white">
                       <span className="text-2xl w-full bg-gradient-to-b from-transparent to-black p-10">
@@ -97,10 +100,11 @@ const home: React.FC = () => {
                     </div>
                   </a>
                 </div>
-                <div className="bg-logo bg-no-repeat bg-cover rounded-md overflow-hidden">
+                <div className="bg-logo rounded-md overflow-hidden">
                   <a
                     href="https://chat.whatsapp.com/Cmcaoa8QIb5EJ662FZKZVv"
                     target="_blank"
+                    rel="noopener"
                   >
                     <div className="w-full h-full flex items-end text-center justify-center font-bold text-white ">
                       <span className="text-2xl w-full bg-gradient-to-b from-transparent to-black p-10">
@@ -110,7 +114,7 @@ const home: React.FC = () => {
                   </a>
                 </div>
                 <div className="bg-cyberpunk rounded-md overflow-hidden">
-                  <a href="/events" target="_blank">
+                  <a href="/events" target="_blank" rel="noopener">
                     <div className="w-full h-full flex items-end text-center justify-center font-bold text-white">
                       <span className="text-2xl w-full bg-gradient-to-b from-transparent to-black p-10">
                         Comece a experiência
@@ -118,8 +122,12 @@ const home: React.FC = () => {
                     </div>
                   </a>
                 </div>
-                <div className="row-start-1 h-52 col-start-2 col-span-2 bg-dungeons-and-dragons bg-no-repeat bg-left-top bg-cover rounded-md overflow-hidden">
-                  <a href="https://dnd.wizards.com/" target="_blank">
+                <div className="row-start-1 h-52 col-start-2 col-span-2 bg-dungeons-and-dragons rounded-md overflow-hidden">
+                  <a
+                    href="https://dnd.wizards.com/"
+                    target="_blank"
+                    rel="noopener"
+                  >
                     <div className="w-full h-full flex items-end text-center justify-center font-bold text-white">
                       <span className="text-2xl w-full bg-gradient-to-b from-transparent to-black p-10">
                         Dungeons and Dragons
@@ -133,6 +141,7 @@ const home: React.FC = () => {
                   <a
                     href="https://www.worldofdarkness.com/vampire-the-masquerade"
                     target="_blank"
+                    rel="noopener"
                   >
                     <div className="w-full h-full flex items-end text-center justify-center font-bold text-white">
                       <span className="text-2xl bg-gradient-to-b w-full from-transparent to-black p-10">

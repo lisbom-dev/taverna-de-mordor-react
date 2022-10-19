@@ -53,7 +53,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   useEffect(() => {
     if (token) {
-      api.defaults.headers.common.Authorization;
+      api.defaults.headers.common.Authorization = token;
     }
   }, [token]);
 
@@ -65,8 +65,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       });
 
       handleLogin(data);
-
-      MySwal.fire("Logado", `Bem-vindo ${email}`, "success");
     } catch (err) {
       MySwal.fire("Erro", `Preencha as credenciais corretas!`, "error");
     }
@@ -111,7 +109,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   }, []);
 
   const googleOauth = useCallback(async () => {
-    const url = new URL(process.env.VITE_DEV_GOOGLE_REDIRECT!);
+    const url = new URL("http://localhost:3333/google/redirect");
     url.search = window.location.search;
 
     const { data } = await api.get(url.toString());
