@@ -1,6 +1,6 @@
 export default () => ({
   showed: true,
   close() {
-    this.showed = false
+    this.showed = false;
   },
-})
+});

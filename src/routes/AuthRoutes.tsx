@@ -8,30 +8,42 @@ import UsersList from "../pages/users/UsersList";
 import BoardSessionsCalendar from "../partials/BoardSessionsCalendar";
 import Calendar from "../partials/Calendar";
 
-const AuthRoutes: React.FC = () => {
+const AuthRoutes: React.FC = () => (
   //* render
-  return (
-    <Routes>
-      <Route path="/" element={<Navigate to="/home" />} />
-      <Route path="/home" element={<Home />} />
-      <Route path="/sign-in" element={<></>} />
-      <Route path="/sign-up" element={<SignUp />} />
-      <Route path="/board-session" element={<BoardSessionsCalendar />} />
-      <Route path="/team" element={<Team />} />
-      <Route path="/users" element={<UsersList />} />
-      <Route path="/users/:id" element={<></>} />
-      <Route path="/adms/:id" element={<></>} />
-      <Route path="/masters/:id" element={<></>} />
-      <Route path="/events" element={<Calendar />} />
-      <Route path="/events/:event_id/boards" element={<></>} />
-      <Route path="/boards/:board_id/chat" element={<></>} />
-      <Route path="/boards/:board_id/players" element={<></>} />
-      <Route path="/boards/:board_id/chat" element={<></>} />
-      <Route path="/notifications" element={<></>} />
-      <Route path="/notifications/:id" element={<></>} />
-      <Route path="/auth/google" element={<AuthGoogle />} />
-    </Routes>
-  );
-};
-
+  <Routes>
+    <Route path="/" element={<Navigate to="/home" />} />
+    <Route path="/home" element={<Home />} />
+    <Route path="/sign-in" element={<div>Page not implemented</div>} />
+    <Route path="/sign-up" element={<SignUp />} />
+    <Route path="/board-session" element={<BoardSessionsCalendar />} />
+    <Route path="/team" element={<Team />} />
+    <Route path="/users" element={<UsersList />} />
+    <Route path="/users/:id" element={<div>Page not implemented</div>} />
+    <Route path="/adms/:id" element={<div>Page not implemented</div>} />
+    <Route path="/masters/:id" element={<div>Page not implemented</div>} />
+    <Route path="/events" element={<Calendar />} />
+    <Route
+      path="/events/:event_id/boards"
+      element={<div>Page not implemented</div>}
+    />
+    <Route
+      path="/boards/:board_id/chat"
+      element={<div>Page not implemented</div>}
+    />
+    <Route
+      path="/boards/:board_id/players"
+      element={<div>Page not implemented</div>}
+    />
+    <Route
+      path="/boards/:board_id/chat"
+      element={<div>Page not implemented</div>}
+    />
+    <Route path="/notifications" element={<div>Page not implemented</div>} />
+    <Route
+      path="/notifications/:id"
+      element={<div>Page not implemented</div>}
+    />
+    <Route path="/auth/google" element={<AuthGoogle />} />
+  </Routes>
+);
 export default AuthRoutes;

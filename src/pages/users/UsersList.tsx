@@ -35,7 +35,7 @@ const list: React.FC = () => {
               <span className="text-xs">Todos os usuários da taverna</span>
             </div>
             <div className="flex items-center justify-between">
-              <div className="flex bg-gray-50 items-center p-2 rounded-md"></div>
+              <div className="flex bg-gray-50 items-center p-2 rounded-md" />
             </div>
           </div>
           <div>
@@ -48,46 +48,44 @@ const list: React.FC = () => {
                         Nome
                       </th>
                       <th className="px-5 py-3 border-b-2 border-gray-200 whitespace-nowrap bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                        <i className="far fa-envelope sm:text-xs"></i>
+                        <i className="far fa-envelope sm:text-xs" />
                         <span>E-mail</span>
                       </th>
                       <th className="px-5 py-3 border-b-2 border-gray-200 whitespace-nowrap bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                        <i className="fab fa-whatsapp"></i>
+                        <i className="fab fa-whatsapp" />
                         <span>Telefone</span>
                       </th>
                       <th className="px-5 py-3 border-b-2 border-gray-200 whitespace-nowrap bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                        <i className="fab fa-instagram"></i>
+                        <i className="fab fa-instagram" />
                         <span>Instagram</span>
                       </th>
                       <th className="px-5 py-3 border-b-2  border-gray-200 whitespace-nowrap bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                        <i className="fab fa-battle-net"></i>
+                        <i className="fab fa-battle-net" />
                         <span>Cargo</span>
                       </th>
                     </tr>
                   </thead>
                   <tbody>
                     {users.length > 0 &&
-                      users.map((user) => {
-                        return (
-                          <UsersCard
-                            id={user.id}
-                            name={user.name}
-                            email={user.email}
-                            cell_phone_number={user.cell_phone_number}
-                            instagram_ref={user.instagram_ref}
-                            is_adm={user.is_adm}
-                            is_master={user.is_master}
-                            photo_url={user.photo_url}
-                            key={user.id}
-                            username={user.username}
-                            description={user.description}
-                            created_at={user.created_at}
-                            updated_at={user.updated_at}
-                            avaluation={user.avaluation}
-                            reviews={user.reviews}
-                          />
-                        );
-                      })}
+                      users.map(user => (
+                        <UsersCard
+                          id={user.id}
+                          name={user.name}
+                          email={user.email}
+                          cell_phone_number={user.cell_phone_number}
+                          instagram_ref={user.instagram_ref}
+                          is_adm={user.is_adm}
+                          is_master={user.is_master}
+                          photo_url={user.photo_url}
+                          key={user.id}
+                          username={user.username}
+                          description={user.description}
+                          created_at={user.created_at}
+                          updated_at={user.updated_at}
+                          avaluation={user.avaluation}
+                          reviews={user.reviews}
+                        />
+                      ))}
                   </tbody>
                 </table>
               </div>
@@ -97,15 +95,17 @@ const list: React.FC = () => {
       </div>
       <div className="flex justify-center">
         <div>
-          <ul className="flex pl-0 list-none rounded my-2"></ul>
+          <ul className="flex pl-0 list-none rounded my-2" />
         </div>
       </div>
       <li>
-        <a className="page-link w-full h-full">
-          <button className="relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-blue-700 border-r-0 ml-0 rounded-l hover:bg-gray-200">
-            Anterior
-          </button>
-        </a>
+        <button
+          type="button"
+          title="Add new task"
+          className="relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-blue-700 border-r-0 ml-0 rounded-l hover:bg-gray-200"
+        >
+          Anterior
+        </button>
       </li>
       <li>
         <div className="page-link w-full h-full">
@@ -113,11 +113,11 @@ const list: React.FC = () => {
             type="button"
             title="showing 1 to 10 of 57 entries"
             className="relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-blue-700 border-r-0 hover:bg-gray-200"
-          ></button>
+          />
         </div>
       </li>
       <li>
-        <a className="page-link w-full h-full" href="">
+        <a className="page-link w-full h-full" href="#">
           <button
             type="button"
             title=""

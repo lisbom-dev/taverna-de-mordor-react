@@ -6,15 +6,13 @@ interface MainProps {
   children: React.ReactNode;
 }
 
-const Main: React.FC<MainProps> = ({ children }) => {
-  return (
-    <div>
-      <Navbar />
-      {children}
-      <Footer />
-      <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
-    </div>
-  );
-};
+const Main: React.FC<MainProps> = ({ children }) => (
+  <div>
+    <Navbar />
+    {children}
+    <Footer />
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js" />
+  </div>
+);
 
 export default Main;

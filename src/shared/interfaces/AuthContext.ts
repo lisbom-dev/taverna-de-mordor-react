@@ -8,7 +8,7 @@ export interface AuthContextData {
     name: string,
     email: string,
     password: string,
-    passwordConfirmation: string
+    passwordConfirmation: string,
   ) => Promise<void>;
   logout: () => Promise<void>;
   googleOauth: () => Promise<void>;

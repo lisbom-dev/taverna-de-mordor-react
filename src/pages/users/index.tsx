@@ -1,6 +1,6 @@
 import React from "react";
+import coverRpg from "../../assets/images/cover-rpg.jpg";
 import { useAuth } from "../../contexts/AuthContext";
-import cover_rpg from "../../images/cover-rpg.jpg";
 import Main from "../../layouts/Main";
 
 const Index: React.FC = () => {
@@ -10,7 +10,7 @@ const Index: React.FC = () => {
       <div className="relative">
         <img
           className="filter blur-sm contrast-100 w-full object-cover h-48"
-          src={cover_rpg}
+          src={coverRpg}
           alt="Imagem de jogadores de RPG"
         />
         <div className="left-20 bottom-10 absolute flex items-center text-lg font-semibold text-white">

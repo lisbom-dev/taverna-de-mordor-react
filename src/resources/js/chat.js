@@ -1,5 +1,7 @@
-import { format } from 'date-fns'
-import { pt } from 'date-fns/locale'
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-undef */
+import { format } from "date-fns";
+import { pt } from "date-fns/locale";
 
 export default () => ({
   /**
@@ -7,50 +9,50 @@ export default () => ({
    */
   socket: undefined,
   messages: [],
-  text: '',
+  text: "",
   initChat(boardId, user, messages) {
-    this.$watch('messages', () => {
-      this.onMessageAdded()
-    })
-    this.messages = messages
-    this.socket = io('/chat', { query: { id: boardId }, forceNew: true })
-    this.boardId = boardId
-    this.user = user
-    this.initEvents()
+    this.$watch("messages", () => {
+      this.onMessageAdded();
+    });
+    this.messages = messages;
+    this.socket = io("/chat", { query: { id: boardId }, forceNew: true });
+    this.boardId = boardId;
+    this.user = user;
+    this.initEvents();
   },
   /**
    * @param {string} text
    */
   sendMessage(text) {
-    text = text.trim()
-    if (text !== '') {
-      this.text = ''
+    text = text.trim();
+    if (text !== "") {
+      this.text = "";
       const message = {
         content: text,
         boardId: this.boardId,
         sender: this.user,
         createdAt: new Date(),
-        created_at: format(new Date(), 'hh:mm', { locale: pt }),
-      }
-      this.socket.emit('message', message)
-      this.addMessageToChat(message)
+        created_at: format(new Date(), "hh:mm", { locale: pt }),
+      };
+      this.socket.emit("message", message);
+      this.addMessageToChat(message);
     } else {
-      this.text = ''
+      this.text = "";
     }
   },
   addMessageToChat(message) {
-    this.messages.push(message)
+    this.messages.push(message);
   },
   initEvents() {
-    this.socket.on('message', (data) => {
+    this.socket.on("message", data => {
       this.addMessageToChat({
         ...data,
         createdAt: new Date(data.createdAt),
-        created_at: format(new Date(data.createdAt), 'hh:mm', { locale: pt }),
-      })
-    })
+        created_at: format(new Date(data.createdAt), "hh:mm", { locale: pt }),
+      });
+    });
   },
   onMessageAdded() {
-    this.$refs.message_field.scrollTop = this.$refs.message_field.scrollHeight
+    this.$refs.message_field.scrollTop = this.$refs.message_field.scrollHeight;
   },
-})
+});
