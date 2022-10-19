@@ -1,14 +1,14 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import 'sweetalert2/dist/sweetalert2.css'; 
-@import '@fortawesome/fontawesome-free/css/fontawesome';
-@import '@fortawesome/fontawesome-free/css/regular';
-@import '@fortawesome/fontawesome-free/css/solid';
-@import '@fortawesome/fontawesome-free/css/brands';
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,700');
-@import url('https://fonts.googleapis.com/css?family=Cinzel:400');
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+@import "sweetalert2/dist/sweetalert2.css";
+@import "@fortawesome/fontawesome-free/css/fontawesome";
+@import "@fortawesome/fontawesome-free/css/regular";
+@import "@fortawesome/fontawesome-free/css/solid";
+@import "@fortawesome/fontawesome-free/css/brands";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Cinzel:100,200,300,400,500,600,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800,900&display=swap");
 
 ::-webkit-scrollbar {
   width: 16px;
@@ -37,4 +37,3 @@
   -webkit-clip-path: polygon(50% 1%, 95% 25%, 95% 75%, 50% 99%, 5% 75%, 5% 25%);
   clip-path: polygon(50% 1%, 95% 25%, 95% 75%, 50% 99%, 5% 75%, 5% 25%);
 }
-
