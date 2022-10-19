@@ -1,5 +1,5 @@
 import React from "react";
-import Main from "../layouts/Main";
+import Main from "../../layouts/Main";
 
 const Edit: React.FC = () => {
   return (
@@ -18,10 +18,11 @@ const Edit: React.FC = () => {
             Titulo do Evento
           </label>
           <input
+            title="Event title"
             value="{{event.name}}"
             name="name"
-            className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
             type="text"
+            className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
           />
         </div>
 
@@ -30,6 +31,7 @@ const Edit: React.FC = () => {
             Descrição do Evento
           </label>
           <textarea
+            title="Event description"
             name="description"
             className="bg-gray-200 h-36 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
           ></textarea>
@@ -53,10 +55,11 @@ const Edit: React.FC = () => {
             Data do Evento
           </label>
           <input
+            title="Event date"
             value="{{event.date}}"
             name="date"
-            className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
             type="date"
+            className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
           />
         </div>
 
@@ -65,10 +68,11 @@ const Edit: React.FC = () => {
             Número Máximo de Mesas
           </label>
           <input
+            title="Event max tables"
             value="{{event.maxBoards}}"
             name="maxBoards"
-            className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
             type="number"
+            className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
           />
         </div>
 
@@ -78,8 +82,9 @@ const Edit: React.FC = () => {
           </label>
           <div className="relative">
             <select
-              className="block appearance-none w-full bg-gray-200 border-2 border-gray-200 hover:border-gray-500 px-4 py-2 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500 text-gray-700"
+              title="Event theme"
               name="theme"
+              className="block appearance-none w-full bg-gray-200 border-2 border-gray-200 hover:border-gray-500 px-4 py-2 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500 text-gray-700"
             >
               <option value="{{theme.value}}"></option>
             </select>

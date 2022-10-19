@@ -1,5 +1,5 @@
 import React from "react";
-import Main from "../layouts/Main";
+import Main from "../../layouts/Main";
 
 const BoardList: React.FC = () => {
   return (
@@ -64,7 +64,11 @@ const BoardList: React.FC = () => {
                 className="page-link w-full h-full"
                 href="/boards{{anchor.url}}"
               >
-                <button className="relative block py-2 px-3 leading-tight bg-blue-500 border border-gray-300 text-white border-r-0"></button>
+                <button
+                  title="asd"
+                  type="button"
+                  className="relative block py-2 px-3 leading-tight bg-blue-500 border border-gray-300 text-white border-r-0"
+                ></button>
               </a>
             </li>
             <li>

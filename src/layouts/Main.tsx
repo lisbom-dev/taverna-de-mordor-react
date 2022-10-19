@@ -1,6 +1,6 @@
 import React from "react";
-import Footer from "../partials/Footer";
-import Navbar from "../partials/Navbar";
+import Footer from "../resources/views/partials/Footer";
+import Navbar from "../resources/views/partials/Navbar";
 
 interface MainProps {
   children: React.ReactNode;

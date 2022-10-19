@@ -1,14 +1,15 @@
 import React from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
+import AuthGoogle from "../pages/AuthGoogle";
+import SignUp from "../pages/users/SignUp";
+import UsersList from "../pages/users/UsersList";
+import BoardSessionsCalendar from "../partials/BoardSessionsCalendar";
 import Home from "../resources/views/Home";
-import AuthGoogle from "../resources/views/AuthGoogle";
-import Team from "../resources/views/Team";
-import UsersList from "../resources/views/users/UsersList";
-import SignUp from "../resources/views/users/SignUp";
 import Calendar from "../resources/views/partials/Calendar";
-import BoardSessionsCalendar from "../resources/views/partials/BoardSessionsCalendar";
+import Team from "../resources/views/Team";
 
 const AuthRoutes: React.FC = () => {
+  //* render
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/home" />} />

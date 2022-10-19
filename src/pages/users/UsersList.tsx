@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import api from "../../../services/api";
-import IPage from "../../../shared/interfaces/IPage";
-import IUser from "../../../shared/interfaces/IUser";
-import Main from "../layouts/Main";
-import UsersCard from "./components/UsersCard";
+import UsersCard from "../../components/UsersCard";
+import Main from "../../layouts/Main";
+import api from "../../services/api";
+import IPage from "../../shared/interfaces/IPage";
+import IUser from "../../shared/interfaces/IUser";
 
 const list: React.FC = () => {
   const [users, setUsers] = useState<IUser[]>([]);
@@ -108,13 +108,21 @@ const list: React.FC = () => {
         </a>
       </li>
       <li>
-        <a className="page-link w-full h-full" href="">
-          <button className="relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-blue-700 border-r-0 hover:bg-gray-200"></button>
-        </a>
+        <div className="page-link w-full h-full">
+          <button
+            type="button"
+            title="showing 1 to 10 of 57 entries"
+            className="relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-blue-700 border-r-0 hover:bg-gray-200"
+          ></button>
+        </div>
       </li>
       <li>
         <a className="page-link w-full h-full" href="">
-          <button className="relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-blue-700 rounded-r hover:bg-gray-200">
+          <button
+            type="button"
+            title=""
+            className="relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-blue-700 rounded-r hover:bg-gray-200"
+          >
             Próximo
           </button>
         </a>

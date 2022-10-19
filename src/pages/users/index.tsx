@@ -1,7 +1,7 @@
 import React from "react";
-import { useAuth } from "../../../contexts/AuthContext";
-import Main from "../layouts/Main";
+import { useAuth } from "../../contexts/AuthContext";
 import cover_rpg from "../../images/cover-rpg.jpg";
+import Main from "../../layouts/Main";
 
 const Index: React.FC = () => {
   const { user } = useAuth();
