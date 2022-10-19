@@ -153,7 +153,7 @@ const Team: React.FC = () => {
           <Tab.Panels>
             <Tab.Panel>
               <ul className="bg-gray-50 justify-center text-center grid grid-cols-3 place-items-center">
-                {teamLead.map((teamMate) => {
+                {teamLead.map(teamMate => {
                   return (
                     <li className="m-6">
                       <a href={teamMate.link} target="_blank">
@@ -175,7 +175,7 @@ const Team: React.FC = () => {
             </Tab.Panel>
             <Tab.Panel>
               <ul className="bg-gray-50 justify-center text-center grid grid-cols-3 place-items-center">
-                {teamDev.map((teamMate) => {
+                {teamDev.map(teamMate => {
                   return (
                     <li className="m-6">
                       <a href={teamMate.link} target="_blank">
@@ -197,7 +197,7 @@ const Team: React.FC = () => {
             </Tab.Panel>
             <Tab.Panel>
               <ul className="bg-gray-50 justify-center text-center grid grid-cols-3 place-items-center">
-                {teamStrategy.map((teamMate) => {
+                {teamStrategy.map(teamMate => {
                   return (
                     <li className="m-6">
                       <a href={teamMate.link} target="_blank">
@@ -219,7 +219,7 @@ const Team: React.FC = () => {
             </Tab.Panel>
             <Tab.Panel>
               <ul className="bg-gray-50 justify-center text-center grid grid-cols-3 place-items-center">
-                {teamArt.map((teamMate) => {
+                {teamArt.map(teamMate => {
                   return (
                     <li className="m-6">
                       <a href={teamMate.link} target="_blank">

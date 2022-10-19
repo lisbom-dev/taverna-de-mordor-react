@@ -35,9 +35,9 @@ const Navbar: React.FC = () => {
                 aria-hidden="true"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M4 6h16M4 12h16M4 18h16"
                 />
               </svg>
@@ -50,9 +50,9 @@ const Navbar: React.FC = () => {
                 aria-hidden="true"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M6 18L18 6M6 6l12 12"
                 />
               </svg>
@@ -67,13 +67,13 @@ const Navbar: React.FC = () => {
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
                 <a
-                  href="/"
+                  href="#"
                   className="font-text text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Início
                 </a>
                 <a
-                  href="/equipe"
+                  href="/team"
                   className="font-text text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Equipe
@@ -101,7 +101,7 @@ const Navbar: React.FC = () => {
                 className="bg-gray-900 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 relative focus:ring-offset-gray-800 focus:ring-white"
               >
                 <span className="sr-only">View notifications</span>
-                <div className="w-2 h-2 bg-red-600 rounded-full absolute left-4 right-0 top-0"></div>
+                <div className="w-2 h-2 bg-red-600 rounded-full absolute left-4 right-0 top-0" />
                 <svg
                   className="h-6 w-6"
                   fill="none"
@@ -110,9 +110,9 @@ const Navbar: React.FC = () => {
                   aria-hidden="true"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
                   />
                 </svg>
@@ -129,7 +129,7 @@ const Navbar: React.FC = () => {
                           className="h-8 w-8 rounded-full object-cover mx-1"
                           alt="avatar"
                         />
-                        <p className="text-gray-600 text-sm mx-2"></p>
+                        <p className="text-gray-600 text-sm mx-2" />
                       </button>
                     </template>
                     <template>
@@ -200,7 +200,7 @@ const Navbar: React.FC = () => {
                       role="menuitem"
                       id="user-menu-item-0"
                     >
-                      <i className="fas fa-user mr-4"></i>
+                      <i className="fas fa-user mr-4" />
                       Perfil
                     </a>
                     <a
@@ -209,7 +209,7 @@ const Navbar: React.FC = () => {
                       role="menuitem"
                       id="user-menu-item-1"
                     >
-                      <i className="fas fa-cogs mr-3"></i>
+                      <i className="fas fa-cogs mr-3" />
                       Configurações
                     </a>
                     {signed && user?.is_adm && (
@@ -219,7 +219,7 @@ const Navbar: React.FC = () => {
                         role="menuitem"
                         id="user-menu-item-2"
                       >
-                        <i className="fas fa-crown mr-4"></i>
+                        <i className="fas fa-crown mr-4" />
                         Área do Adm
                       </a>
                     )}
@@ -231,7 +231,7 @@ const Navbar: React.FC = () => {
                       id="user-menu-item-2"
                       onClick={handleLogout}
                     >
-                      <i className="fas fa-sign-out-alt mr-4"></i>
+                      <i className="fas fa-sign-out-alt mr-4" />
                       Sair
                     </a>
                   </div>
@@ -287,13 +287,13 @@ const Navbar: React.FC = () => {
       <div className="sm:hidden z-50" id="mobile-menu">
         <div className="px-2 pt-2 pb-3 space-y-1">
           <a
-            href="/"
+            href="#"
             className="font-text text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Início
           </a>
           <a
-            href="/equipe"
+            href="/team"
             className="font-text text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Equipe

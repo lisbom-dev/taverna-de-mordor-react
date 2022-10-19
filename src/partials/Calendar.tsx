@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 import { addMonths } from "date-fns";
 import React from "react";
 import Main from "../layouts/Main";
@@ -5,7 +6,7 @@ import Main from "../layouts/Main";
 interface valuesCal {
   no_of_days: number[];
   blankdays: number[];
-  days: String[];
+  days: string[];
   event_theme: any;
   event_title: string;
   events: any;
@@ -15,13 +16,13 @@ interface valuesCal {
   monthOffset: number;
   year: number;
   month: number;
-  MONTH_NAMES: String[];
-  DAYS: String[];
+  MONTH_NAMES: string[];
+  DAYS: string[];
 }
 
 // Component React
 const Calendar: React.FC = () => {
-  let valuesCalendar: valuesCal = {
+  const valuesCalendar: valuesCal = {
     MONTH_NAMES: [
       "Janeiro",
       "Fevereiro",
@@ -53,14 +54,14 @@ const Calendar: React.FC = () => {
 
   const initDate = (month: number) => {
     const date = new Date();
-    let today = addMonths(date, month);
+    const today = addMonths(date, month);
     valuesCalendar.month = today.getMonth();
     valuesCalendar.year = today.getFullYear();
     valuesCalendar.monthOffset = month;
     valuesCalendar.datepickerValue = new Date(
       valuesCalendar.year,
       valuesCalendar.month,
-      today.getDate()
+      today.getDate(),
     ).toDateString();
 
     return (
@@ -72,31 +73,34 @@ const Calendar: React.FC = () => {
   };
 
   const getNoOfDays = () => {
-    let daysInMonth = new Date(
+    const daysInMonth = new Date(
       valuesCalendar.year,
       valuesCalendar.month + 1,
-      0
+      0,
     ).getDate();
 
     // find where to start calendar day of week
-    let dayOfWeek = new Date(
+    const dayOfWeek = new Date(
       valuesCalendar.year,
-      valuesCalendar.month
+      valuesCalendar.month,
     ).getDay();
-    let blankdaysArray = [];
-    for (var i = 1; i <= dayOfWeek; i++) {
+    const blankdaysArray = [];
+    for (let i = 1; i <= dayOfWeek; i++) {
       blankdaysArray.push(i);
     }
 
-    let daysArray = [];
-    for (var i = 1; i <= daysInMonth; i++) {
+    const daysArray = [];
+    for (let i = 1; i <= daysInMonth; i++) {
       daysArray.push(i);
     }
 
     valuesCalendar.blankdays = blankdaysArray;
     valuesCalendar.no_of_days = daysArray;
 
-    return valuesCalendar.blankdays, valuesCalendar.no_of_days;
+    return {
+      blankdays: valuesCalendar.blankdays,
+      no_of_days: valuesCalendar.no_of_days,
+    };
   };
 
   initDate(valuesCalendar.month);
@@ -113,8 +117,8 @@ const Calendar: React.FC = () => {
           <div className="bg-white rounded-lg shadow overflow-hidden">
             <div className="flex items-center justify-between py-2 px-6">
               <div>
-                <span className="text-lg font-bold text-gray-800"></span>
-                <span className="ml-1 text-lg text-gray-600 font-normal"></span>
+                <span className="text-lg font-bold text-gray-800" />
+                <span className="ml-1 text-lg text-gray-600 font-normal" />
               </div>
               <div className="border rounded-lg px-1">
                 <button
@@ -129,14 +133,14 @@ const Calendar: React.FC = () => {
                     stroke="currentColor"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M15 19l-7-7 7-7"
                     />
                   </svg>
                 </button>
-                <div className="border-r inline-flex h-6"></div>
+                <div className="border-r inline-flex h-6" />
                 <button
                   title="Próximo Mês"
                   type="button"
@@ -149,9 +153,9 @@ const Calendar: React.FC = () => {
                     stroke="currentColor"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M9 5l7 7-7 7"
                     />
                   </svg>
@@ -162,36 +166,38 @@ const Calendar: React.FC = () => {
             <div className="-mx-1 -mb-1">
               <div className="flex flex-wrap">
                 {/* Map para gerar os nomes dos dias */}
-                {valuesCalendar.DAYS.map((weekDays) => {
-                  return (
-                    <div className="w-[14.26%] py-10 px-2 md:py-2">
-                      <div className="text-gray-600 text-sm uppercase tracking-wide font-bold text-center">
-                        {weekDays}
-                      </div>
+                {valuesCalendar.DAYS.map(weekDays => (
+                  <div className="w-[14.26%] py-10 px-2 md:py-2">
+                    <div className="text-gray-600 text-sm uppercase tracking-wide font-bold text-center">
+                      {weekDays}
                     </div>
-                  );
-                })}
+                  </div>
+                ))}
               </div>
 
               <div className="flex flex-wrap border-t border-l">
                 {valuesCalendar.blankdays.map(() => {
                   console.log(valuesCalendar.blankdays, "blankdays no for");
                   return (
-                    <div className="h-30 w-[14.28%] text-center border-r border-b px-4 pt-2"></div>
+                    <div className="h-30 w-[14.28%] text-center border-r border-b px-4 pt-2" />
                   );
                 })}
-                {valuesCalendar.no_of_days.map((day) => {
+                {valuesCalendar.no_of_days.map(day => {
                   console.log(
                     valuesCalendar.no_of_days[0],
-                    "no_of_days no for"
+                    "no_of_days no for",
                   );
                   return (
                     <div className="h-30 w-[14.28%] md:px-4 pt-2 border-r border-b relative">
                       {day}
-                      <div className="inline-flex w-6 h-6 items-center justify-center cursor-pointer text-center leading-none rounded-full transition ease-in-out duration-100"></div>
+                      <div className="inline-flex w-6 h-6 items-center justify-center cursor-pointer text-center leading-none rounded-full transition ease-in-out duration-100" />
                       <div className="mt-1">
-                        <a className="md:px-2 py-1 rounded-lg mt-1 overflow-hidden border">
-                          <p className="md:text-sm text-xs md:font-bold truncate leading-tight"></p>
+                        <a
+                          href="#"
+                          title="sla"
+                          className="md:px-2 py-1 rounded-lg mt-1 overflow-hidden border"
+                        >
+                          <p className="md:text-sm text-xs md:font-bold truncate leading-tight" />
                         </a>
                       </div>
                     </div>
@@ -202,7 +208,7 @@ const Calendar: React.FC = () => {
           </div>
         </div>
 
-        {/*checked && (
+        {/* checked && (
           <div className="fixed z-40 top-0 right-0 left-0 bottom-0 h-full w-full">
             <div className="p-4 max-w-xl mx-auto relative left-0 right-0 overflow-hidden">
               <div className="shadow absolute right-0 top-0 w-10 h-10 rounded-full bg-white text-gray-500 hover:text-gray-800 inline-flex items-center justify-center cursor-pointer">
@@ -321,7 +327,7 @@ const Calendar: React.FC = () => {
               </form>
             </div>
           </div>
-        )*/}
+        ) */}
       </div>
     </Main>
   );

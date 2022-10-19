@@ -1,9 +1,5 @@
-import React from 'react'
+import React from "react";
 
-const BoardSessionsCalendar = () => {
-  return (
-    <div>BoardSessionsCalendar</div>
-  )
-}
+const BoardSessionsCalendar = () => <div>BoardSessionsCalendar</div>;
 
-export default BoardSessionsCalendar
+export default BoardSessionsCalendar;
