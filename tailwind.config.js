@@ -11,16 +11,16 @@ module.exports = {
       },
       backgroundImage: {
         "dungeons-and-dragons":
-          "url('./src/assets/images/dungeons-and-dragons.jpg')",
+          "url('/src/assets/images/dungeons-and-dragons.jpg')",
         "vampire-the-mascarade":
-          "url('./src/assets/images/vampire-the-mascarade.jpeg')",
-        "al-rpg-club": "url('./src/assets/images/al-rpg-club.jpg')",
-        cyberpunk: "url('./src/assets/images/cyberpunk.jpg')",
-        logo: "url('./src/assets/images/pp.jpg')",
-        "tabuleiro-rpg": "url('./src/assets/images/tabuleiro-rpg.jpg')",
-        "main-cover": "url('./src/assets/images/cover-rpg.jpg')",
+          "url('/src/assets/images/vampire-the-mascarade.jpeg')",
+        "al-rpg-club": "url('/src/assets/images/al-rpg-club.jpg')",
+        cyberpunk: "url('/src/assets/images/cyberpunk.jpg')",
+        logo: "url('/src/assets/images/pp.jpg')",
+        "tabuleiro-rpg": "url('/src/assets/images/tabuleiro-rpg.jpg')",
+        "main-cover": "url('/src/assets/images/cover-rpg.jpg')",
         "main-cover-gradient":
-          "linear-gradient(0.03deg, #111827, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.75), rgba(17, 24, 39, 0.4), rgba(17, 24, 39, 0.1), rgba(17, 24, 39, 0)),url('../images/cover-rpg.jpg')",
+          "linear-gradient(0.03deg, #111827, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.75), rgba(17, 24, 39, 0.4), rgba(17, 24, 39, 0.1), rgba(17, 24, 39, 0)),url('/src/assets/images/cover-rpg.jpg')",
       },
       fontSize: {
         "2xs": "10px",
