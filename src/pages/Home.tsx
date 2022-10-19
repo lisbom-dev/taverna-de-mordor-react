@@ -1,12 +1,14 @@
 import React from "react";
 import { FaDiceD20, FaFlag } from "react-icons/fa";
-import coverRPG from "../../assets/images/cover-rpg.jpg";
-import { useAuth } from "../../contexts/AuthContext";
-import Main from "./layouts/Main";
+import coverRPG from "../assets/images/cover-rpg.jpg";
+import { useAuth } from "../contexts/AuthContext";
+import Main from "../layouts/Main";
 
 const home: React.FC = () => {
+  //* hooks
   const { logout } = useAuth();
 
+  //* render
   return (
     <Main>
       <div>

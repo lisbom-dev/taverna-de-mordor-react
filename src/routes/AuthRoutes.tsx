@@ -1,12 +1,12 @@
 import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import AuthGoogle from "../pages/AuthGoogle";
+import Home from "../pages/Home";
+import Team from "../pages/Team";
 import SignUp from "../pages/users/SignUp";
 import UsersList from "../pages/users/UsersList";
 import BoardSessionsCalendar from "../partials/BoardSessionsCalendar";
-import Home from "../resources/views/Home";
-import Calendar from "../resources/views/partials/Calendar";
-import Team from "../resources/views/Team";
+import Calendar from "../partials/Calendar";
 
 const AuthRoutes: React.FC = () => {
   //* render
