@@ -6,6 +6,7 @@ import {
   useMemo,
   useState,
 } from "react";
+import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 import MySwal from "../services/swal";
 import {
@@ -19,6 +20,9 @@ export const AuthContext = createContext<AuthContextData>(
 );
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
+  //* hooks
+  const navigate = useNavigate();
+
   const [user, setUser] = useState<IUser>();
   const [token, setToken] = useState<string>();
   const signed = useMemo(() => {
@@ -102,9 +106,13 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       await api.post("/logout");
       localStorage.removeItem("auth:user");
       localStorage.removeItem("auth:token");
+      navigate("/");
+      window.location.reload();
     } catch (err) {
       localStorage.removeItem("auth:user");
       localStorage.removeItem("auth:token");
+      navigate("/");
+      window.location.reload();
     }
   }, []);
 
