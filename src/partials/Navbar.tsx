@@ -73,7 +73,7 @@ const Navbar: React.FC = () => {
                   Início
                 </a>
                 <a
-                  href="/equipe"
+                  href="/team"
                   className="font-text text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Equipe
@@ -293,7 +293,7 @@ const Navbar: React.FC = () => {
             Início
           </a>
           <a
-            href="/equipe"
+            href="/team"
             className="font-text text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Equipe

@@ -17,7 +17,7 @@ const AuthRoutes: React.FC = () => {
       <Route path="/sign-in" element={<></>} />
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="/board-session" element={<BoardSessionsCalendar />} />
-      <Route path="/equipe" element={<Team />} />
+      <Route path="/team" element={<Team />} />
       <Route path="/users" element={<UsersList />} />
       <Route path="/users/:id" element={<></>} />
       <Route path="/adms/:id" element={<></>} />
