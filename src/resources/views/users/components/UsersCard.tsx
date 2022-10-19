@@ -1,5 +1,5 @@
 import React from "react";
-import IUserCardProps from "../../../../shared/interfaces/IUserCardProps";
+import IUserCardProps from "../../../../shared/interfaces/IUser";
 
 const UsersCard: React.FC<IUserCardProps> = ({
   name,

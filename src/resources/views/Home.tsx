@@ -1,8 +1,8 @@
 import React from "react";
-import { useAuth } from "../../contexts/AuthContext";
-import coverRPG from "../images/cover-rpg.jpg";
-import Main from "./layouts/Main";
 import { FaDiceD20, FaFlag } from "react-icons/fa";
+import coverRPG from "../../assets/images/cover-rpg.jpg";
+import { useAuth } from "../../contexts/AuthContext";
+import Main from "./layouts/Main";
 
 const home: React.FC = () => {
   const { logout } = useAuth();
