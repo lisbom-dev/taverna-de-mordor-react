@@ -23,14 +23,14 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e0;
+  background: #a7afb8;
   border-radius: 100vh;
   border: 3px solid #edf2f7;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #a0aec0;
+  background: #90979e;
 }
 
 .hexagon {
