@@ -7,6 +7,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
+import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 import MySwal from "../services/swal";
 import {
@@ -20,6 +21,9 @@ export const AuthContext = createContext<AuthContextData>(
 );
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
+  //* hooks
+  const navigate = useNavigate();
+
   //* states
   const [user, setUser] = useState<IUser>();
   const [token, setToken] = useState<string>();
@@ -101,16 +105,20 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   };
 
-  const logout = async () => {
+  const logout = useCallback(async () => {
     try {
       await api.post("/logout");
       localStorage.removeItem("auth:user");
       localStorage.removeItem("auth:token");
+      navigate("/");
+      window.location.reload();
     } catch (err) {
       localStorage.removeItem("auth:user");
       localStorage.removeItem("auth:token");
+      navigate("/");
+      window.location.reload();
     }
-  };
+  }, []);
 
   const googleOauth = async () => {
     const url = new URL(import.meta.env.VITE_DEV_GOOGLE_CALLBACK);
