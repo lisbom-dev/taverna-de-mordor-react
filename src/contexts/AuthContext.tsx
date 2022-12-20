@@ -5,13 +5,13 @@ import React, {
   useContext,
   useEffect,
   useMemo,
-  useState,
+  useState
 } from "react";
 import api from "../services/api";
 import MySwal from "../services/swal";
 import {
   AuthContextData,
-  AuthProviderProps,
+  AuthProviderProps
 } from "../shared/interfaces/AuthContext";
 import IUser from "../shared/interfaces/IUser";
 
