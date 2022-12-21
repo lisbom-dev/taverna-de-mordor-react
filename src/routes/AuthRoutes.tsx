@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import AuthGoogle from "../pages/AuthGoogle";
 import Home from "../pages/Home";
 import Team from "../pages/Team";
+import User from "../pages/users";
 import SignUp from "../pages/users/SignUp";
 import UsersList from "../pages/users/UsersList";
 import BoardSessionsCalendar from "../partials/BoardSessionsCalendar";
@@ -11,21 +12,29 @@ import Calendar from "../partials/Calendar";
 const AuthRoutes: React.FC = () => (
   //* render
   <Routes>
+    {/* others */}
     <Route path="/" element={<Navigate to="/home" />} />
     <Route path="/home" element={<Home />} />
-    <Route path="/sign-in" element={<div>Page not implemented</div>} />
-    <Route path="/sign-up" element={<SignUp />} />
-    <Route path="/board-session" element={<BoardSessionsCalendar />} />
     <Route path="/team" element={<Team />} />
-    <Route path="/users" element={<UsersList />} />
-    <Route path="/users/:id" element={<div>Page not implemented</div>} />
-    <Route path="/adms/:id" element={<div>Page not implemented</div>} />
-    <Route path="/masters/:id" element={<div>Page not implemented</div>} />
-    <Route path="/events" element={<Calendar />} />
+    <Route path="/notifications" element={<div>Page not implemented</div>} />
     <Route
-      path="/events/:event_id/boards"
+      path="/notifications/:id"
       element={<div>Page not implemented</div>}
     />
+
+    {/* auth */}
+    <Route path="/sign-in" element={<div>Page not implemented</div>} />
+    <Route path="/sign-up" element={<SignUp />} />
+    <Route path="/auth/google" element={<AuthGoogle />} />
+
+    {/* users */}
+    <Route path="/users" element={<UsersList />} />
+    <Route path="/users/:id" element={<User />} />
+    <Route path="/adms/:id" element={<div>Page not implemented</div>} />
+    <Route path="/masters/:id" element={<div>Page not implemented</div>} />
+
+    {/* boards */}
+    <Route path="/board-session" element={<BoardSessionsCalendar />} />
     <Route
       path="/boards/:board_id/chat"
       element={<div>Page not implemented</div>}
@@ -38,12 +47,13 @@ const AuthRoutes: React.FC = () => (
       path="/boards/:board_id/chat"
       element={<div>Page not implemented</div>}
     />
-    <Route path="/notifications" element={<div>Page not implemented</div>} />
+
+    {/* events */}
+    <Route path="/events" element={<Calendar />} />
     <Route
-      path="/notifications/:id"
+      path="/events/:event_id/boards"
       element={<div>Page not implemented</div>}
     />
-    <Route path="/auth/google" element={<AuthGoogle />} />
   </Routes>
 );
 export default AuthRoutes;
