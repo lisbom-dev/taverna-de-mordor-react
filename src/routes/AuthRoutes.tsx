@@ -1,6 +1,7 @@
 import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import AuthGoogle from "../pages/AuthGoogle";
+import NotFound from "../pages/errors/NotFound";
 import Home from "../pages/Home";
 import Team from "../pages/Team";
 import SignUp from "../pages/users/SignUp";
@@ -11,7 +12,11 @@ import Calendar from "../partials/Calendar";
 const AuthRoutes: React.FC = () => (
   //* render
   <Routes>
+    {/* helper routes */}
     <Route path="/" element={<Navigate to="/home" />} />
+    <Route path="*" element={<NotFound />} />
+
+    {/*  */}
     <Route path="/home" element={<Home />} />
     <Route path="/sign-in" element={<div>Page not implemented</div>} />
     <Route path="/sign-up" element={<SignUp />} />

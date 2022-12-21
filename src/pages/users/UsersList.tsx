@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import UsersCard from "../../components/UsersCard";
-import Main from "../../layouts/Main";
+import MainLayout from "../../layouts/MainLayout";
 import api from "../../services/api";
 import IPage from "../../shared/interfaces/IPage";
 import IUser from "../../shared/interfaces/IUser";
@@ -26,7 +26,7 @@ const list: React.FC = () => {
   }, []);
 
   return (
-    <Main>
+    <MainLayout>
       <div className="p-3 my-3">
         <div className="bg-white p-8 rounded-md w-full">
           <div className=" flex items-center justify-between pb-6">
@@ -127,7 +127,7 @@ const list: React.FC = () => {
           </button>
         </a>
       </li>
-    </Main>
+    </MainLayout>
   );
 };
 

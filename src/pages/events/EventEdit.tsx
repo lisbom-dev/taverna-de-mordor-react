@@ -1,8 +1,8 @@
 import React from "react";
-import Main from "../../layouts/Main";
+import MainLayout from "../../layouts/MainLayout";
 
 const Edit: React.FC = () => (
-  <Main>
+  <MainLayout>
     <form
       action="/events/{{event.id}}?_method=PUT"
       method="POST"
@@ -114,7 +114,7 @@ const Edit: React.FC = () => (
         </button>
       </div>
     </form>
-  </Main>
+  </MainLayout>
 );
 
 export default Edit;

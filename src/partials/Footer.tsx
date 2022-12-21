@@ -1,15 +1,21 @@
 import React from "react";
 
 const Footer: React.FC = () => (
-  <footer className="footer bg-white relative pt-1 border-b-2 mt-auto border-gray-800">
+  <footer className="bg-white relative shadow-top">
     <div className="container mx-auto px-6">
-      <div className="mt-2 border-t-2 border-gray-300 flex flex-col items-center">
-        <div className="sm:w-2/3 text-center py-6">
-          <p className="text-sm text-gray-800 font-bold mb-2">
-            © 2021{" "}
-            <a href="https://github.com/Manuel-Antunes">Manuel-Antunes</a>
-          </p>
-        </div>
+      <div className="flex flex-col items-center py-6">
+        <span className="w-fit text-start text-xs md:text-sm text-gray-500 font-bold">
+          Copyright 2021{" "}
+          <a
+            href="https://github.com/lisbom-dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-teal-700 hover:text-blue-500 underline transition-colors ease-in-out"
+          >
+            Lisbom
+          </a>{" "}
+          - Todos os Direitos Reservados
+        </span>
       </div>
     </div>
   </footer>

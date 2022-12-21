@@ -1,8 +1,8 @@
 import React from "react";
-import Main from "../../layouts/Main";
+import MainLayout from "../../layouts/MainLayout";
 
 const Chat: React.FC = () => (
-  <Main>
+  <MainLayout>
     <div className="container mx-auto">
       <div className="flex-1 p:2 sm:p-6 justify-between flex flex-col">
         <div className="flex sm:items-center justify-between py-3 border-b-2 border-gray-200">
@@ -84,6 +84,6 @@ const Chat: React.FC = () => (
         </div>
       </div>
     </div>
-  </Main>
+  </MainLayout>
 );
 export default Chat;

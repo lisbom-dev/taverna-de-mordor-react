@@ -1,8 +1,8 @@
 import React from "react";
-import Main from "../../layouts/Main";
+import MainLayout from "../../layouts/MainLayout";
 
 const BoardIndex: React.FC = () => (
-  <Main>
+  <MainLayout>
     <section
       className="bg-gray-900 h-full"
       x-data="{contentId:1, openModal:false}"
@@ -272,7 +272,7 @@ const BoardIndex: React.FC = () => (
         </div>
       </div>
     </section>
-  </Main>
+  </MainLayout>
 );
 
 export default BoardIndex;

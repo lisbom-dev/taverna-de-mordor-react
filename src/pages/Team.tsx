@@ -1,5 +1,5 @@
 import React from "react";
-import Main from "../layouts/Main";
+import MainLayout from "../layouts/MainLayout";
 
 const Team: React.FC = () => {
   const team = [
@@ -36,7 +36,7 @@ const Team: React.FC = () => {
   ];
 
   return (
-    <Main>
+    <MainLayout>
       <div className="p-7 bg-gray-50 pl-24 pt-5 flex ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,7 @@ const Team: React.FC = () => {
           </li>
         ))}
       </ul>
-    </Main>
+    </MainLayout>
   );
 };
 

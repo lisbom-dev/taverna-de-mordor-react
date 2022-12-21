@@ -21,6 +21,7 @@ module.exports = {
         "main-cover": "url('/src/assets/images/cover-rpg.jpg')",
         "main-cover-gradient":
           "linear-gradient(0.03deg, #111827, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.75), rgba(17, 24, 39, 0.4), rgba(17, 24, 39, 0.1), rgba(17, 24, 39, 0)),url('/src/assets/images/cover-rpg.jpg')",
+        "page-not-found": "url('./src/assets/images/404.jpg')",
       },
       fontSize: {
         "2xs": "10px",
@@ -66,6 +67,10 @@ module.exports = {
       },
       minHeight: {
         60: "230px",
+      },
+      boxShadow: {
+        top: "0 0 15px rgb(0 0 0 / 0.1)",
+        "card-box-shadow": "0px 0px 20px 0px rgba(76,87,125,.02)",
       },
     },
     fontFamily: {
