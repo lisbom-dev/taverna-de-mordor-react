@@ -13,20 +13,19 @@ const SignUp: React.FC = () => (
         </div>
         <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
           <form action="/users" method="POST">
-            <input type="hidden" name="email" value="{{email}}" />
-            <input type="hidden" name="photoUrl" value="{{photoUrl}}" />
-            <input type="hidden" name="name" value="{{name}}" />
+            <input type="hidden" name="email" />
+            <input type="hidden" name="photoUrl" />
+            <input type="hidden" name="name" />
             <div className="relative w-full mb-3">
               <label
                 className="block uppercase tracking-wider text-gray-600 text-xs font-bold mb-2"
-                htmlFor="grid-password"
+                htmlFor="name"
               >
                 Nome
               </label>
               <input
-                type="username"
-                value="{{name}}"
-                required
+                id="name"
+                type="text"
                 name="username"
                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
@@ -34,11 +33,12 @@ const SignUp: React.FC = () => (
             <div className="relative w-full mb-3">
               <label
                 className="block uppercase text-gray-600 text-xs font-bold mb-2"
-                htmlFor="grid-password"
+                htmlFor="phone"
               >
                 Telefone
               </label>
               <input
+                id="phone"
                 type="cellPhoneNumber"
                 required
                 name="cellPhoneNumber"
@@ -50,11 +50,12 @@ const SignUp: React.FC = () => (
             <div className="relative w-full mb-3">
               <label
                 className="block uppercase text-gray-600 text-xs font-bold mb-2"
-                htmlFor="grid-password"
+                htmlFor="instagram"
               >
                 Instagram (opcional)
               </label>
               <input
+                id="instagram"
                 type="instagramRef"
                 name="instagramRef"
                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
@@ -65,7 +66,7 @@ const SignUp: React.FC = () => (
               <div id="remaining" className="flex flex-row justify-between">
                 <label
                   className="block uppercase text-gray-600 text-xs font-bold mb-2"
-                  htmlFor="grid-password"
+                  htmlFor="description"
                 >
                   Descrição (opcional)
                 </label>
@@ -74,7 +75,7 @@ const SignUp: React.FC = () => (
                 </template>
               </div>
               <textarea
-                id="content"
+                id="description"
                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                 name="description"
                 placeholder="Descrição do usuário..."
