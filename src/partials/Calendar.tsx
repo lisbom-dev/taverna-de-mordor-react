@@ -1,7 +1,7 @@
 /* eslint-disable no-plusplus */
 import { addMonths } from "date-fns";
 import React from "react";
-import Main from "../layouts/Main";
+import Main from "../layouts/MainLayout";
 
 interface valuesCal {
   no_of_days: number[];

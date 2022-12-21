@@ -2,7 +2,7 @@ import React from "react";
 import { FaDiceD20, FaFlag } from "react-icons/fa";
 import coverRPG from "../assets/images/cover-rpg.jpg";
 import { useAuth } from "../contexts/AuthContext";
-import Main from "../layouts/Main";
+import MainLayout from "../layouts/MainLayout";
 
 const home: React.FC = () => {
   //* hooks
@@ -10,7 +10,7 @@ const home: React.FC = () => {
 
   //* render
   return (
-    <Main>
+    <MainLayout>
       <div>
         <section>
           <div className="relative shadow-lg">
@@ -193,7 +193,7 @@ const home: React.FC = () => {
           </section>
         </div>
       </div>
-    </Main>
+    </MainLayout>
   );
 };
 
