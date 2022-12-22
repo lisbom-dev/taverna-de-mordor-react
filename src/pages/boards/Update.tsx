@@ -1,5 +1,5 @@
 import React from "react";
 
-const Update = () => <div>update</div>;
+const Update: React.FC = () => <div>update</div>;
 
 export default Update;

@@ -1,5 +1,5 @@
 import React from "react";
-import { FaStarHalfAlt, FaStar } from "react-icons/fa";
+import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
 const ReviewForm: React.FC = () => (
   <form action="/{{element}}/{{id}}/reviews" method="POST">
